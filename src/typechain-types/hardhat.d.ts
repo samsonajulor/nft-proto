@@ -14,170 +14,188 @@ import * as Contracts from ".";
 declare module "hardhat/types/runtime" {
   interface HardhatEthersHelpers extends HardhatEthersHelpersBase {
     getContractFactory(
-      name: "MyContract",
+      name: "IERC4906",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.MyContract__factory>;
+    ): Promise<Contracts.IERC4906__factory>;
     getContractFactory(
-      name: "S_M",
+      name: "ERC721",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.S_M__factory>;
+    ): Promise<Contracts.ERC721__factory>;
     getContractFactory(
-      name: "IMultiSig",
+      name: "ERC721URIStorage",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.IMultiSig__factory>;
+    ): Promise<Contracts.ERC721URIStorage__factory>;
     getContractFactory(
-      name: "IMultiSigWura",
+      name: "IERC721Metadata",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.IMultiSigWura__factory>;
+    ): Promise<Contracts.IERC721Metadata__factory>;
     getContractFactory(
-      name: "Lock",
+      name: "IERC721",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Lock__factory>;
+    ): Promise<Contracts.IERC721__factory>;
     getContractFactory(
-      name: "Multisig",
+      name: "IERC721Receiver",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Multisig__factory>;
+    ): Promise<Contracts.IERC721Receiver__factory>;
     getContractFactory(
-      name: "MultiSigMain",
+      name: "ERC165",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.MultiSigMain__factory>;
+    ): Promise<Contracts.ERC165__factory>;
     getContractFactory(
-      name: "MultiSigFactory",
+      name: "IERC165",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.MultiSigFactory__factory>;
+    ): Promise<Contracts.IERC165__factory>;
     getContractFactory(
-      name: "MultiSig",
+      name: "INFTProto",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.MultiSig__factory>;
+    ): Promise<Contracts.INFTProto__factory>;
+    getContractFactory(
+      name: "NFTProto",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.NFTProto__factory>;
 
     getContractAt(
-      name: "MyContract",
+      name: "IERC4906",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
-    ): Promise<Contracts.MyContract>;
+    ): Promise<Contracts.IERC4906>;
     getContractAt(
-      name: "S_M",
+      name: "ERC721",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
-    ): Promise<Contracts.S_M>;
+    ): Promise<Contracts.ERC721>;
     getContractAt(
-      name: "IMultiSig",
+      name: "ERC721URIStorage",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
-    ): Promise<Contracts.IMultiSig>;
+    ): Promise<Contracts.ERC721URIStorage>;
     getContractAt(
-      name: "IMultiSigWura",
+      name: "IERC721Metadata",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
-    ): Promise<Contracts.IMultiSigWura>;
+    ): Promise<Contracts.IERC721Metadata>;
     getContractAt(
-      name: "Lock",
+      name: "IERC721",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
-    ): Promise<Contracts.Lock>;
+    ): Promise<Contracts.IERC721>;
     getContractAt(
-      name: "Multisig",
+      name: "IERC721Receiver",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
-    ): Promise<Contracts.Multisig>;
+    ): Promise<Contracts.IERC721Receiver>;
     getContractAt(
-      name: "MultiSigMain",
+      name: "ERC165",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
-    ): Promise<Contracts.MultiSigMain>;
+    ): Promise<Contracts.ERC165>;
     getContractAt(
-      name: "MultiSigFactory",
+      name: "IERC165",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
-    ): Promise<Contracts.MultiSigFactory>;
+    ): Promise<Contracts.IERC165>;
     getContractAt(
-      name: "MultiSig",
+      name: "INFTProto",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
-    ): Promise<Contracts.MultiSig>;
+    ): Promise<Contracts.INFTProto>;
+    getContractAt(
+      name: "NFTProto",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.NFTProto>;
 
     deployContract(
-      name: "MyContract",
+      name: "IERC4906",
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.MyContract>;
+    ): Promise<Contracts.IERC4906>;
     deployContract(
-      name: "S_M",
+      name: "ERC721",
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.S_M>;
+    ): Promise<Contracts.ERC721>;
     deployContract(
-      name: "IMultiSig",
+      name: "ERC721URIStorage",
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.IMultiSig>;
+    ): Promise<Contracts.ERC721URIStorage>;
     deployContract(
-      name: "IMultiSigWura",
+      name: "IERC721Metadata",
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.IMultiSigWura>;
+    ): Promise<Contracts.IERC721Metadata>;
     deployContract(
-      name: "Lock",
+      name: "IERC721",
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Lock>;
+    ): Promise<Contracts.IERC721>;
     deployContract(
-      name: "Multisig",
+      name: "IERC721Receiver",
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Multisig>;
+    ): Promise<Contracts.IERC721Receiver>;
     deployContract(
-      name: "MultiSigMain",
+      name: "ERC165",
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.MultiSigMain>;
+    ): Promise<Contracts.ERC165>;
     deployContract(
-      name: "MultiSigFactory",
+      name: "IERC165",
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.MultiSigFactory>;
+    ): Promise<Contracts.IERC165>;
     deployContract(
-      name: "MultiSig",
+      name: "INFTProto",
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.MultiSig>;
+    ): Promise<Contracts.INFTProto>;
+    deployContract(
+      name: "NFTProto",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.NFTProto>;
 
     deployContract(
-      name: "MyContract",
+      name: "IERC4906",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.MyContract>;
+    ): Promise<Contracts.IERC4906>;
     deployContract(
-      name: "S_M",
+      name: "ERC721",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.S_M>;
+    ): Promise<Contracts.ERC721>;
     deployContract(
-      name: "IMultiSig",
+      name: "ERC721URIStorage",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.IMultiSig>;
+    ): Promise<Contracts.ERC721URIStorage>;
     deployContract(
-      name: "IMultiSigWura",
+      name: "IERC721Metadata",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.IMultiSigWura>;
+    ): Promise<Contracts.IERC721Metadata>;
     deployContract(
-      name: "Lock",
+      name: "IERC721",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Lock>;
+    ): Promise<Contracts.IERC721>;
     deployContract(
-      name: "Multisig",
+      name: "IERC721Receiver",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Multisig>;
+    ): Promise<Contracts.IERC721Receiver>;
     deployContract(
-      name: "MultiSigMain",
+      name: "ERC165",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.MultiSigMain>;
+    ): Promise<Contracts.ERC165>;
     deployContract(
-      name: "MultiSigFactory",
+      name: "IERC165",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.MultiSigFactory>;
+    ): Promise<Contracts.IERC165>;
     deployContract(
-      name: "MultiSig",
+      name: "INFTProto",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.MultiSig>;
+    ): Promise<Contracts.INFTProto>;
+    deployContract(
+      name: "NFTProto",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.NFTProto>;
 
     // default types
     getContractFactory(
