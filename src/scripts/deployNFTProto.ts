@@ -1,6 +1,6 @@
 import { ethers } from "hardhat";
 
-// nftproto contract deployed at: 0x676153a15D51C2De75de8FC4bb6E2eBaED82E1Bb
+// nftproto contract deployed at: 0xD4C42e502669947139D736b693C97b82D4d01F48
 async function main() {
   const NFTProto = await ethers.deployContract('NFTProto', []);
 

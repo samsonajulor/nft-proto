@@ -8,15 +8,18 @@ const storedNFTOnIPFS = {
 async function main() {
   // get caller address
   const [signer] = await ethers.getSigners()
-  console.log(signer)
-  const NFTProtoAddress = '0x676153a15D51C2De75de8FC4bb6E2eBaED82E1Bb';
+  const NFTProtoAddress = '0x168Ca561E63C868b0F6cC10a711d0b4455864f17';
 
   const NFTProtoContract = await ethers.getContractAt('INFTProto', NFTProtoAddress);
 
-  const setTokenData = await NFTProtoContract.mintNFT(signer.address as string, storedNFTOnIPFS.url);
+  const setTokenData = await NFTProtoContract.mintNFT(
+    signer.address,
+    'bafyreiblrs3ktv36q3o2ssatubyfndoo4z3dg3agn3qpgdsmuao7a5sqoy'
+  );
+  // const setTokenData = await NFTProtoContract.mintNFT(signer.address, storedNFTOnIPFS.url);
   // @ts-ignore
-  (await setTokenData.wait())?.logs[0]?.args[0];
-  console.log(setTokenData);
+  const setTokenDataLog = (await setTokenData.wait())?.logs;
+  console.log(setTokenDataLog);
 }
 
 main().catch((error) => {

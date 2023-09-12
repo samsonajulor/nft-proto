@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/home/samsonajulor/github/web3/nft-proto/src/contracts/interfaces/INFTProto.sol": {
-      "lastModificationDate": 1694457228164,
-      "contentHash": "eafc94424778f7d9989425a90b748055",
+      "lastModificationDate": 1694458913723,
+      "contentHash": "cbc1d9cec1ff2454cf5a9716ce1d1ee1",
       "sourceName": "contracts/interfaces/INFTProto.sol",
       "solcConfig": {
         "version": "0.8.13",
@@ -37,8 +37,8 @@
       ]
     },
     "/home/samsonajulor/github/web3/nft-proto/src/contracts/nftProto.sol": {
-      "lastModificationDate": 1694457196011,
-      "contentHash": "9e9aee5787de8de22d0d9ca22ea4916e",
+      "lastModificationDate": 1694458968729,
+      "contentHash": "daac995fb6c84ae0a50e4605bba32359",
       "sourceName": "contracts/nftProto.sol",
       "solcConfig": {
         "version": "0.8.13",

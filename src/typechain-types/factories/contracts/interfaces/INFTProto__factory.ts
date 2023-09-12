@@ -16,6 +16,11 @@ const _abi = [
         name: "recipient",
         type: "address",
       },
+      {
+        internalType: "string",
+        name: "_tokenURI",
+        type: "string",
+      },
     ],
     name: "mintNFT",
     outputs: [],

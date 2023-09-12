@@ -25,7 +25,7 @@ export interface INFTProtoInterface extends Interface {
 
   encodeFunctionData(
     functionFragment: "mintNFT",
-    values: [AddressLike]
+    values: [AddressLike, string]
   ): string;
 
   decodeFunctionResult(functionFragment: "mintNFT", data: BytesLike): Result;
@@ -74,7 +74,11 @@ export interface INFTProto extends BaseContract {
     event?: TCEvent
   ): Promise<this>;
 
-  mintNFT: TypedContractMethod<[recipient: AddressLike], [void], "nonpayable">;
+  mintNFT: TypedContractMethod<
+    [recipient: AddressLike, _tokenURI: string],
+    [void],
+    "nonpayable"
+  >;
 
   getFunction<T extends ContractMethod = ContractMethod>(
     key: string | FunctionFragment
@@ -82,7 +86,11 @@ export interface INFTProto extends BaseContract {
 
   getFunction(
     nameOrSignature: "mintNFT"
-  ): TypedContractMethod<[recipient: AddressLike], [void], "nonpayable">;
+  ): TypedContractMethod<
+    [recipient: AddressLike, _tokenURI: string],
+    [void],
+    "nonpayable"
+  >;
 
   filters: {};
 }

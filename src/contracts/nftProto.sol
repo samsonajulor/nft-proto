@@ -16,7 +16,7 @@ contract NFTProto is ERC721URIStorage {
 
     function mintNFT(address recipient, string memory _tokenURI) public {
         tokenId++;
-        _setTokenURI(tokenId, _tokenURI);
         _safeMint(recipient, tokenId);
+        _setTokenURI(tokenId, _tokenURI);
     }
 }
