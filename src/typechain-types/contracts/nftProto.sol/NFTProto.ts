@@ -28,7 +28,12 @@ export interface NFTProtoInterface extends Interface {
     nameOrSignature:
       | "approve"
       | "balanceOf"
+      | "burnNFT"
+      | "checkExists"
       | "getApproved"
+      | "getBalance"
+      | "getOwner"
+      | "getTokenIdTotal"
       | "isApprovedForAll"
       | "mintNFT"
       | "name"
@@ -60,8 +65,28 @@ export interface NFTProtoInterface extends Interface {
     values: [AddressLike]
   ): string;
   encodeFunctionData(
+    functionFragment: "burnNFT",
+    values: [BigNumberish]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "checkExists",
+    values: [BigNumberish]
+  ): string;
+  encodeFunctionData(
     functionFragment: "getApproved",
     values: [BigNumberish]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "getBalance",
+    values: [AddressLike]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "getOwner",
+    values: [BigNumberish]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "getTokenIdTotal",
+    values?: undefined
   ): string;
   encodeFunctionData(
     functionFragment: "isApprovedForAll",
@@ -104,8 +129,19 @@ export interface NFTProtoInterface extends Interface {
 
   decodeFunctionResult(functionFragment: "approve", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "balanceOf", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "burnNFT", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "checkExists",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(
     functionFragment: "getApproved",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(functionFragment: "getBalance", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "getOwner", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "getTokenIdTotal",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
@@ -276,7 +312,17 @@ export interface NFTProto extends BaseContract {
 
   balanceOf: TypedContractMethod<[owner: AddressLike], [bigint], "view">;
 
+  burnNFT: TypedContractMethod<[_tokenId: BigNumberish], [void], "nonpayable">;
+
+  checkExists: TypedContractMethod<[_tokenId: BigNumberish], [boolean], "view">;
+
   getApproved: TypedContractMethod<[tokenId: BigNumberish], [string], "view">;
+
+  getBalance: TypedContractMethod<[_owner: AddressLike], [bigint], "view">;
+
+  getOwner: TypedContractMethod<[_tokenId: BigNumberish], [string], "view">;
+
+  getTokenIdTotal: TypedContractMethod<[], [bigint], "view">;
 
   isApprovedForAll: TypedContractMethod<
     [owner: AddressLike, operator: AddressLike],
@@ -348,8 +394,23 @@ export interface NFTProto extends BaseContract {
     nameOrSignature: "balanceOf"
   ): TypedContractMethod<[owner: AddressLike], [bigint], "view">;
   getFunction(
+    nameOrSignature: "burnNFT"
+  ): TypedContractMethod<[_tokenId: BigNumberish], [void], "nonpayable">;
+  getFunction(
+    nameOrSignature: "checkExists"
+  ): TypedContractMethod<[_tokenId: BigNumberish], [boolean], "view">;
+  getFunction(
     nameOrSignature: "getApproved"
   ): TypedContractMethod<[tokenId: BigNumberish], [string], "view">;
+  getFunction(
+    nameOrSignature: "getBalance"
+  ): TypedContractMethod<[_owner: AddressLike], [bigint], "view">;
+  getFunction(
+    nameOrSignature: "getOwner"
+  ): TypedContractMethod<[_tokenId: BigNumberish], [string], "view">;
+  getFunction(
+    nameOrSignature: "getTokenIdTotal"
+  ): TypedContractMethod<[], [bigint], "view">;
   getFunction(
     nameOrSignature: "isApprovedForAll"
   ): TypedContractMethod<

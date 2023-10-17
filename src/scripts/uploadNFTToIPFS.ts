@@ -5,8 +5,8 @@ const pathToImage = path.join(__dirname, './assets/samosky.jpg');
 
 const data = {
   nft_image_path: pathToImage,
-  nft_name: 'Samosky',
-  nft_description: 'This is how I really look in real life.',
+  nft_name: 'BEARDED SAM',
+  nft_description: 'NOT THE REAL ME.',
 };
 async function main() {
   await upload(data.nft_image_path, data.nft_name, data.nft_description);

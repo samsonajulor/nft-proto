@@ -19,4 +19,24 @@ contract NFTProto is ERC721URIStorage {
         _safeMint(recipient, tokenId);
         _setTokenURI(tokenId, _tokenURI);
     }
+
+    function burnNFT(uint _tokenId) public {
+        _burn(_tokenId);
+        tokenId--;
+    }
+
+    function getTokenIdTotal() public view returns (uint256) {
+        return tokenId;
+    }
+
+    function getOwner(uint _tokenId) public view returns (address) {
+        return ownerOf(_tokenId);
+    }
+
+    function checkExists(uint256 _tokenId) public view returns (bool) {
+        return _exists(_tokenId);
+    }
+    function getBalance(address _owner) public view returns (uint) {
+        return balanceOf(_owner);
+    }
 }

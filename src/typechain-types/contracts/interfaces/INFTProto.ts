@@ -3,6 +3,7 @@
 /* eslint-disable */
 import type {
   BaseContract,
+  BigNumberish,
   BytesLike,
   FunctionFragment,
   Result,
@@ -21,13 +22,52 @@ import type {
 } from "../../common";
 
 export interface INFTProtoInterface extends Interface {
-  getFunction(nameOrSignature: "mintNFT"): FunctionFragment;
+  getFunction(
+    nameOrSignature:
+      | "burnNFT"
+      | "checkExists"
+      | "getBalance"
+      | "getOwner"
+      | "getTokenIdTotal"
+      | "mintNFT"
+  ): FunctionFragment;
 
+  encodeFunctionData(
+    functionFragment: "burnNFT",
+    values: [BigNumberish]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "checkExists",
+    values: [BigNumberish]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "getBalance",
+    values: [AddressLike]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "getOwner",
+    values: [BigNumberish]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "getTokenIdTotal",
+    values?: undefined
+  ): string;
   encodeFunctionData(
     functionFragment: "mintNFT",
     values: [AddressLike, string]
   ): string;
 
+  decodeFunctionResult(functionFragment: "burnNFT", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "checkExists",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(functionFragment: "getBalance", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "getOwner", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "getTokenIdTotal",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(functionFragment: "mintNFT", data: BytesLike): Result;
 }
 
@@ -74,6 +114,16 @@ export interface INFTProto extends BaseContract {
     event?: TCEvent
   ): Promise<this>;
 
+  burnNFT: TypedContractMethod<[_tokenId: BigNumberish], [void], "nonpayable">;
+
+  checkExists: TypedContractMethod<[_tokenId: BigNumberish], [boolean], "view">;
+
+  getBalance: TypedContractMethod<[_owner: AddressLike], [bigint], "view">;
+
+  getOwner: TypedContractMethod<[_tokenId: BigNumberish], [string], "view">;
+
+  getTokenIdTotal: TypedContractMethod<[], [bigint], "view">;
+
   mintNFT: TypedContractMethod<
     [recipient: AddressLike, _tokenURI: string],
     [void],
@@ -84,6 +134,21 @@ export interface INFTProto extends BaseContract {
     key: string | FunctionFragment
   ): T;
 
+  getFunction(
+    nameOrSignature: "burnNFT"
+  ): TypedContractMethod<[_tokenId: BigNumberish], [void], "nonpayable">;
+  getFunction(
+    nameOrSignature: "checkExists"
+  ): TypedContractMethod<[_tokenId: BigNumberish], [boolean], "view">;
+  getFunction(
+    nameOrSignature: "getBalance"
+  ): TypedContractMethod<[_owner: AddressLike], [bigint], "view">;
+  getFunction(
+    nameOrSignature: "getOwner"
+  ): TypedContractMethod<[_tokenId: BigNumberish], [string], "view">;
+  getFunction(
+    nameOrSignature: "getTokenIdTotal"
+  ): TypedContractMethod<[], [bigint], "view">;
   getFunction(
     nameOrSignature: "mintNFT"
   ): TypedContractMethod<
