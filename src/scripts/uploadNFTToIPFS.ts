@@ -9,9 +9,9 @@ const data = {
   nft_description: 'This is how I really look in real life.',
 };
 async function main() {
-  const result = await upload(data.nft_image_path, data.nft_name, data.nft_description);
+  await upload(data.nft_image_path, data.nft_name, data.nft_description);
 
-  console.log('NFT META File URL', result);
+  console.log('NFT File upload success!!');
 }
 
 main().catch((error) => {

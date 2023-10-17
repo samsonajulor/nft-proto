@@ -1,14 +1,19 @@
 import { ethers } from 'hardhat';
 
+// const storedNFTOnIPFS = {
+//   ipnft: 'bafyreiblrs3ktv36q3o2ssatubyfndoo4z3dg3agn3qpgdsmuao7a5sqoy',
+//   url: 'ipfs://bafyreiblrs3ktv36q3o2ssatubyfndoo4z3dg3agn3qpgdsmuao7a5sqoy/metadata.json'
+// } // with sepolia
+
 const storedNFTOnIPFS = {
   ipnft: 'bafyreiblrs3ktv36q3o2ssatubyfndoo4z3dg3agn3qpgdsmuao7a5sqoy',
-  url: 'ipfs://bafyreiblrs3ktv36q3o2ssatubyfndoo4z3dg3agn3qpgdsmuao7a5sqoy/metadata.json'
-}
+  url: 'ipfs://bafyreiblrs3ktv36q3o2ssatubyfndoo4z3dg3agn3qpgdsmuao7a5sqoy/metadata.json',
+}; // with base-goerli
 
 async function main() {
   // get caller address
   const [signer] = await ethers.getSigners()
-  const NFTProtoAddress = '0x168Ca561E63C868b0F6cC10a711d0b4455864f17';
+  const NFTProtoAddress = '0x8601b06357C033F1fcD538E3dA17c7e54d7dB81a'; //base
 
   const NFTProtoContract = await ethers.getContractAt('INFTProto', NFTProtoAddress);
 
