@@ -50,9 +50,6 @@ This Contract was deployed to sepolia testnet via the following commands
 #### Burn the nft with the contract to sepolia testnet
 - RUN `npx hardhat run scripts/burnNFT.ts --network  sepolia`
 
-#### Burn the nft with the contract from sepolia
-- RUN `npx hardhat run scripts/burnNFT.ts --network sepolia`
-
 #### Get Balance of the nft with the contract from sepolia
 - RUN `npx hardhat run scripts/getBalance.ts --network sepolia`
 

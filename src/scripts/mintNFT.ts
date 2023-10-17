@@ -19,7 +19,7 @@ async function main() {
 
   const setTokenData = await NFTProtoContract.mintNFT(
     signer.address,
-    'bafyreidy7c2bj5esazcttbadhbxrjmeq72k7mj25xiuqlxfmqxtboynmay'
+    'ipfs://bafyreidy7c2bj5esazcttbadhbxrjmeq72k7mj25xiuqlxfmqxtboynmay/metadata.json'
   );
   // @ts-ignore
   const setTokenDataLog = (await setTokenData.wait())?.logs;
